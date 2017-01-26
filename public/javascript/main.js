@@ -2,7 +2,7 @@ $(function ()
  {
      var usersData=[], 
      FILTER_ALL = "All", FILTER_LIVE="Live",FILTER_OFFLINE="Offline",
-     filterType=FILTER_ALL,
+     filterType=FILTER_ALL,term="",
      users = ["ESL_SC2", "freecodecamp","brunofin"];
   
 	  
@@ -21,8 +21,8 @@ $(function ()
 	  	 });
 
 	  	 $('#search').on('change textInput input',function(e){
-	  	 	  console.log(this);
-	  	 	  search(this.value);	
+	  	 	  term = this.value;
+	  	 	  search(term,usersData);	
 	  	 });
 
 	  });
@@ -76,8 +76,11 @@ $(function ()
 	  	  		case FILTER_OFFLINE: return val.stream == null;
 	  	  	}
 	  	  });
-	  	  renderUsers(filteredUsers);
-	  	
+	  	  if(term!==""){
+	  	  	search(term,filteredUsers);
+	  	  }else{
+	  	  	renderUsers(filteredUsers);	
+	  	  }
 	  }
 	  function renderUsers(data){
 	  	  $('.loader').addClass('hide');
@@ -86,8 +89,8 @@ $(function ()
 	      $("#users").html(compiledTemplate({data:data}));	
 	  }
 
-	  function search(term){
-	  	 filteredUsers = usersData.filter(function(channel){
+	  function search(term,data){
+	  	 filteredUsers = data.filter(function(channel){
 	  	  	return channel.display_name.toLowerCase().match(term.toLowerCase()) !=null;
 	  	  });
 	  	  renderUsers(filteredUsers); 	
