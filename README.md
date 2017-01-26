@@ -21,3 +21,4 @@ Technologies used:
 - Heroku for deploying it with a php build setup : https://devcenter.heroku.com/articles/deploying-php 
 - LESS http://lesscss.org/ 
 - Gulp  http://gulpjs.com/ 
+- SubtlePatterns https://github.com/subtlepatterns/SubtlePatterns
