@@ -14,7 +14,9 @@ $(function ()
 	  	
 	  	 $('.filter a').on('click',function(e){
 	  	 	  e.preventDefault();
-	  	 	  filterType = this.innerHTML;  
+	  	 	  filterType = this.innerHTML; 
+	  	 	  $('.filter a').removeClass('active');
+	  	 	  $(this).addClass('active');  
 	  	 	  showFilteredUsers(filterType);
 	  	 });
 
@@ -34,7 +36,7 @@ $(function ()
 	      }
 	      else{
 	      	  return  new Handlebars.SafeString('<div class="footer"> <div><span> 0 </span> viewers</div>'+
-	      	'<div> offline </div></div>');
+	      	'<div class="offline"> offline </div></div>');
 	      }
 	});	
 

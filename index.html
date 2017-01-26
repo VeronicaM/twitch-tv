@@ -4,12 +4,16 @@
 	<link rel="stylesheet" type="text/css" href="./public/css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/8a123a7fda.js"></script>
 </head>
 <body>
 	
 		  <div class="searchBar">		  
 		       <div> Twitch TV <div> Live and on demand streaming video platform </div> </div>
-		  	      <input type="text" placeholder="Search" id="search" value=""/>
+			         <div>
+			           <span> <i class="fa fa-search" aria-hidden="true"></i></span>
+			            <input type="text" autocomplete="off" placeholder="Search" id="search" value="" />
+				     </div>
 		  	   </div>
 	  	   </div>
 		  <div id="users">
@@ -28,7 +32,7 @@
 			  {{/each}}
 	      </script>
   <footer class="filter">
-		  	  	<a href="">Live</a><a href="">Offline</a><a href="">All</a>
+		  	  	<a href="">Live</a><a href="">Offline</a><a class="active" href="">All</a>
 		 </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
  
