@@ -105,6 +105,7 @@ div.searchBar > div > input:focus {
   width: 100%;
   max-width: 100%;
   border-radius: 5px;
+  animation: grow 0.6s;
 }
 @media screen and (min-width: 371px) {
   #users img {
@@ -138,6 +139,7 @@ div.searchBar > div > input:focus {
 #users > div div a + div {
   word-break: break-all;
   word-break: break-word;
+  animation: fadein 0.6s;
 }
 @media screen and (min-width: 745px) {
   #users > div div a + div {
@@ -222,11 +224,22 @@ div.footer div:last-child {
     -webkit-transform: rotate(360deg);
   }
 }
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+@keyframes fadein {
+  from {
+    color: transparent;
   }
-  100% {
-    transform: rotate(360deg);
+  to {
+    color: white;
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
   }
 }

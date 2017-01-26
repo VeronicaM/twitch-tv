@@ -7,11 +7,7 @@ $(function ()
   
 	  
 	  $(document).ready(function(){
-	  	getUsers();	
-	  		// setInterval(function(){
-	  			getUsers();			
-	    // 	 }, 30000);	
-	  	
+	     	getUsers();	
 	  	 $('.filter a').on('click',function(e){
 	  	 	  e.preventDefault();
 	  	 	  filterType = this.innerHTML; 

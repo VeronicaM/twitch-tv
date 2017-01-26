@@ -107,6 +107,7 @@ div.searchBar{
        width: 100%;
        max-width: 100%;
        border-radius: 5px;
+       animation: grow 0.6s;
         @media screen and(min-width:371px){
     	    width: 50%;
 			margin-left: 25%;
@@ -134,7 +135,8 @@ div.searchBar{
 	   }
 	   div a + div {
 	   	word-break:break-all;
-	   	word-break: break-word;
+	   	word-break: break-word	;
+	   	animation: fadein 0.6s;
 	   	 @media screen and(min-width:745px){
 	   	 	word-break:normal;	
 	   	 }
@@ -213,7 +215,22 @@ div.searchBar{
   100% { -webkit-transform: rotate(360deg); }
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes fadein {
+  from {
+    color: transparent;
+  }
+  to {
+    color: white;
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
 }
