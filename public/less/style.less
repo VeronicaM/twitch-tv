@@ -2,16 +2,24 @@
 *{
 	box-sizing: border-box;
 }
-.header{
-	display:flex;
-	flex-direction:column;
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    font-family: Helvetica, sans-serif;
 }
+
 div.searchBar{
 	display: flex;
     justify-content: space-around;
 	flex-wrap: wrap;
     align-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top:10px;
 
     & > div{
     	flex-grow:2;
@@ -26,25 +34,94 @@ div.searchBar{
         }
     }
  	& > input{
-    	flex-grow:1;
-        width: 50%;
-        height: 40px;
-
+    	flex-grow: 1;
+	    font-size: 24px;
+	    font-weight: 600;
+	    width: 50%; 
+	    height: 40px;
+	    background-color: transparent;
+	    border: none;
+	    border-bottom: 3px solid bisque;
     }
-       
+    & > input:focus{
+    	outline: none;
+    }
 }
 .filter{
+	width: 100%;
+	position: fixed;
+	bottom: 10px;
 	display: flex;
-    justify-content: space-around;
+    justify-content: center;
    // background-color: @nav-color;
 
-    a{
+    a{	
+        margin-left: 20px;
     	text-decoration: none;
     	font-size: 25px;
     	line-height: 1.5 !important;
+    	margin-left: 20px;
         background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 2px, @nav-color 2px, @nav-color 3px, rgba(0, 0, 0, 0) 3px);
       &:hover{
       	background-image: none; 
       }	
     }
+}
+
+#users{
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+	top:145px;   
+
+    bottom: 70px;
+    max-height: 100%;
+    img{
+       width: 100%;
+       max-width: 100%;
+    }
+    & > div {
+       font-size: 14px;
+	   width: 95%;
+	   padding: 14px;
+	   border: 1px solid lightgray;
+	   margin-bottom: 20px;
+	   div a {
+ 		    text-decoration: none;
+    		color: @nav-color;	
+    		font-size: 16px;
+    		font-weight: 600;
+   			padding-right: 10px;
+	   }
+	  
+    }
+     & > div > div{
+	   	display: flex;
+	    border-bottom: 1px solid lightgray;
+	    padding-bottom: 12px;
+	    text-align: center;
+	    justify-content: space-between;
+	  } 
+    @media screen and(min-width:778px){
+    	top: 80px;
+    }
+}
+ div.footer{
+	display: flex;
+    padding-top: 11px;
+    text-align: center;
+    justify-content: space-between;
+    border:none !important;
+	 div:first-child{
+	 	padding-right: 10px;
+	 	span{
+	      color: #9E0142;
+   		  font-weight: 600;
+	 	}
+	 }
+	 div:last-child{
+	 	padding-left: 10px;
+	 	border-left: 1px solid lightgray;
+	 }
 }

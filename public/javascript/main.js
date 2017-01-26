@@ -28,12 +28,13 @@ $(function ()
 
     Handlebars.registerHelper('streamInfo', function(stream) {
 	      if(stream !=null){
-	      	  return  new Handlebars.SafeString('<div> <div>'+ stream.viewers+' viewers</div>'+
+	      	  return  new Handlebars.SafeString('<div class="footer"> <div><span>'+ stream.viewers+'</span> viewers</div>'+
 	      	'<div>'+stream.channel.status+
 	      	'</div></div>');	
 	      }
 	      else{
-	      	  return  new Handlebars.SafeString('<div> offline </div>');	
+	      	  return  new Handlebars.SafeString('<div class="footer"> <div><span> 0 </span> viewers</div>'+
+	      	'<div> offline </div></div>');
 	      }
 	});	
 
@@ -59,7 +60,6 @@ $(function ()
 			  });
 
 		  	Promise.all(promises).then(values => { 
-			  // console.log("values",values); 
 			   usersData = values; 
 			   showFilteredUsers(filterType);
 			});	
@@ -79,7 +79,6 @@ $(function ()
 	  function renderUsers(data){
 	  	  var template = $("#usersLayout").html();
 	      var compiledTemplate = Handlebars.compile(template);   
-	      console.log('usersData',filteredUsers);
 	      $("#users").html(compiledTemplate({data:data}));	
 	  }
 

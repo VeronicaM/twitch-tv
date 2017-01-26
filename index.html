@@ -6,30 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	  <div>
-	  <div class="header">
+	
 		  <div class="searchBar">		  
-	       <div> Twitch TV <div> Live and on demand streaming video platform </div> </div>
-	  	      <input type="text" placeholder="Search" id="search" value=""/>
+		       <div> Twitch TV <div> Live and on demand streaming video platform </div> </div>
+		  	      <input type="text" placeholder="Search" id="search" value=""/>
+		  	   </div>
 	  	   </div>
-		  <div class="filter">
-		  	  	<a href="">Live</a><a href="">Offline</a><a href="">All</a>
-		 </div>
-	  </div>
 		  <div id="users">
 	 			
 	      </div>
           <script id="usersLayout" type="text/x-handlebars-template">​
 	          {{#each data}}
 	       	  	<div>
-	       	  	     <img src="{{logo}}"/>
-	       	  		  <div> <a href="https://www.twitch.tv/{{display_name}}" target="_blank"> {{display_name}} </a></div> <div>{{bio}}</div>
+	       	  	      <a href="https://www.twitch.tv/{{display_name}}" target="_blank"> <img src="{{logo}}"/>  </a>
+	       	  		  <div> <a href="https://www.twitch.tv/{{display_name}}" target="_blank"> {{display_name}} </a>
+	       	  		  	<div>{{bio}}</div>	
+	       	  		  </div> 
 	 				  {{#streamInfo stream}}{{/streamInfo}}
 
 	       	  	</div>
 			  {{/each}}
 	      </script>
-
+  <footer class="filter">
+		  	  	<a href="">Live</a><a href="">Offline</a><a href="">All</a>
+		 </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
  
    <script src="./public/javascript/main.js" type="text/javascript"></script>
