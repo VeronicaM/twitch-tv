@@ -30,7 +30,7 @@ div.searchBar {
   background-color: #9E0142;
   padding-top: 10px;
   color: white;
-  height: 146px;
+  height: 150px;
 }
 div.searchBar i {
   color: bisque;
@@ -136,7 +136,13 @@ div.searchBar > div > input:focus {
   padding-right: 10px;
 }
 #users > div div a + div {
+  word-break: break-all;
   word-break: break-word;
+}
+@media screen and (min-width: 745px) {
+  #users > div div a + div {
+    word-break: normal;
+  }
 }
 @media screen and (min-width: 745px) {
   #users > div {
@@ -144,7 +150,7 @@ div.searchBar > div > input:focus {
     margin-left: 15px;
     width: 28%;
     min-width: 350px;
-    min-height: 455px;
+    max-height: 455px;
     overflow-y: auto;
     position: relative;
   }
