@@ -64,7 +64,7 @@ div.searchBar > div > input {
 div.searchBar > div > input:focus {
   outline: none;
 }
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 745px) {
   div.searchBar {
     height: 76px;
   }
@@ -106,7 +106,13 @@ div.searchBar > div > input:focus {
   max-width: 100%;
   border-radius: 5px;
 }
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 371px) {
+  #users img {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+@media screen and (min-width: 745px) {
   #users img {
     width: 75%;
     margin-left: 15%;
@@ -132,7 +138,7 @@ div.searchBar > div > input:focus {
 #users > div div a + div {
   word-break: break-word;
 }
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 745px) {
   #users > div {
     height: 95%;
     margin-left: 15px;
@@ -151,7 +157,7 @@ div.searchBar > div > input:focus {
   text-align: center;
   justify-content: space-between;
 }
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 745px) {
   #users {
     top: 88px;
     bottom: 25px;
@@ -179,10 +185,42 @@ div.footer div:last-child {
   border-left: 1px solid lightgray;
   color: green;
 }
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 745px) {
   div.footer {
     position: absolute;
     bottom: 0;
     width: 90%;
+  }
+}
+.loader {
+  display: block;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #9E0142;
+  width: 120px;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+.hide {
+  display: none;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

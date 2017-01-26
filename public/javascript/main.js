@@ -41,6 +41,7 @@ $(function ()
 	});	
 
 	  function getUsers(){
+	  	   $('.loader').removeClass('hide');
 		  	var promises = [];
 		  	users.map(function(i){	
 		  		promises.push(new Promise(function(resolve,reject){
@@ -79,6 +80,7 @@ $(function ()
 	  	
 	  }
 	  function renderUsers(data){
+	  	  $('.loader').addClass('hide');
 	  	  var template = $("#usersLayout").html();
 	      var compiledTemplate = Handlebars.compile(template);   
 	      $("#users").html(compiledTemplate({data:data}));	
