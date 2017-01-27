@@ -1,0 +1,247 @@
+@nav-color: #2C3D6B;
+@text-color:#FFC039;
+@active-color:#192464;
+@card-color:white;
+@border-color:lightgray;
+@loader-color:#f3f3f3;
+@success-color:#024002;
+@shadow:0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+*{
+	box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+}
+body{
+	background-image: url('../img/congruent_pentagon.png');
+	background-size: cover;
+}
+.active{
+	color:@active-color !important;
+    background-image: none;
+    background-color: @text-color;
+    border-radius: 8px;
+    padding: 0 10px 0 10px;
+}
+div.searchBar{
+	display: flex;
+    justify-content: space-around;
+	flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: @nav-color;
+    padding-top: 10px;
+    color: @text-color;
+    height: 150px;
+    i {
+    	color: @text-color;
+    }
+    & > div{
+    	flex-grow:2;
+        text-align: center; 
+        font-size: 27px;
+        padding-bottom: 12px;
+        padding: 0 12px 12px 5px;
+        font-weight: 700;
+
+       div {
+        	font-size: 20px;
+        	font-weight: normal;
+        }
+    }
+    & > div:last-child{
+    	margin-left: -70px;
+    }
+ 	& > div > input{
+    	flex-grow: 1;
+	    font-size: 24px;
+	    font-weight: 600;
+	    width: 50%; 
+	    height: 40px;
+	    background-color: transparent;
+	    border: none;
+	    color: @text-color;
+	    border-bottom: 3px solid @text-color;
+    }
+    & >  div >input:focus{
+    	outline: none;
+    }
+    @media screen and(min-width:745px){
+    	 height: 76px;
+    }
+
+}
+.filter{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+    background-color: @nav-color;
+    color: @text-color !important;
+	display: flex;
+    justify-content: center;
+    a{	
+    	color:@text-color;
+        margin-left: 20px;
+    	text-decoration: none;
+    	font-size: 25px;
+    	line-height: 1.5 !important;
+    	margin-left: 20px;
+      &:hover{
+      	background-image: none; 
+      }	
+    }
+}
+.offline{
+	color:red!important;
+}
+#users{
+    position: fixed;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+	  top:155px;   
+    margin-left: 10px;
+    bottom: 70px;
+    max-height: 100%;
+    img{
+       width: 100%;
+       max-width: 100%;
+       border-radius: 5px;
+       animation: grow 0.6s;
+        @media screen and(min-width:371px){
+    	    width: 50%;
+			margin-left: 25%;
+        }
+	    @media screen and(min-width:745px){
+	    	width: 75%;
+    		margin-left: 15%;
+	    }
+    }
+    & > div {
+       background-color:@card-color;
+       font-size: 14px;
+	   width: 95%;
+	   padding: 14px;
+	   border: 1px solid @border-color;
+	   margin-bottom: 20px;
+	   border-radius: 5px;
+	   box-shadow: @shadow;
+	   div a {
+ 		    text-decoration: none;
+    		color: @active-color;	
+    		font-size: 16px;
+    		font-weight: 600;
+   			padding-right: 10px;
+   			animation: fadein 0.6s;
+	   }
+	   div a + div {
+	   	word-break:break-all;
+	   	word-break: break-word	;
+	   	animation: fadein 0.6s;
+	   	 @media screen and(min-width:745px){
+	   	 	word-break:normal;	
+	   	 }
+	   }
+
+	  @media screen and(min-width:745px){
+	  	height: 95%;
+	    margin-left: 15px;
+	    width: 28%;
+	    min-width: 350px;
+	    max-height: 455px;
+      min-height: 455px;    
+	   // overflow-y: auto;
+	    position:relative;
+	  }
+    }
+     & > div > div{
+	   	display: flex;
+	    border-bottom: 1px solid @border-color;
+	    padding-bottom: 12px;
+	    padding-top: 10px;
+	    text-align: center;
+	    justify-content: space-between;
+
+	  } 
+    @media screen and(min-width:745px){
+    	top: 88px;
+    	bottom:25px;
+    	display: flex;
+    	flex-wrap: wrap;
+	    flex-direction: row-reverse;
+	    justify-content: flex-end;
+    }
+}
+ div.footer{
+	display: flex;
+    text-align: center;
+    justify-content: space-between;
+    border:none !important;
+
+	 div:first-child{
+	 	padding-right: 10px;
+	 	animation: grow 0.6s;
+	 	span{
+	 	  animation: grow 0.6s;	
+	      color: @active-color;
+   		  font-weight: 600;
+	 	}
+	 }
+	 div:last-child{
+	 	animation: grow 0.6s;
+	 	padding-left: 10px;
+	 	border-left: 1px solid @border-color;
+	 	color:@success-color;
+	 }
+     @media screen and(min-width:745px){
+    	 position: absolute;
+         bottom: 0; 
+         width: 90%;
+    }
+  
+}
+.loader {
+	display: block;
+    border: 16px solid @loader-color;
+    border-radius: 50%;
+    border-top: 16px solid @nav-color;
+    width: 120px;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+.hide{
+	display: none;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes fadein {
+  from {
+    color: transparent;
+  }
+  to {
+    color: white;
+  }
+}
+@keyframes grow {
+  from {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}

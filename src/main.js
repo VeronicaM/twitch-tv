@@ -58,7 +58,7 @@ $(function ()
 		  		}));
 			  });
 
-		  	Promise.all(promises).then(values => { 
+		  	Promise.all(promises).then(function(values){ 
 			   usersData = values; 
 			   showFilteredUsers(filterType);
 			});	
