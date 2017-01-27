@@ -1,4 +1,10 @@
-@nav-color: #9E0142;
+@nav-color: #2C3D6B;
+@text-color:#FFC039;
+@active-color:#192466;
+@card-color:white;
+@border-color:lightgray;
+@loader-color:#f3f3f3;
+@shadow:0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 *{
 	box-sizing: border-box;
 }
@@ -13,9 +19,9 @@ body{
 	background-size: cover;
 }
 .active{
-	color: #A06095 !important;
+	color:@active-color !important;
     background-image: none;
-    background-color: #492031;
+    background-color: @text-color;
     border-radius: 8px;
     padding: 0 10px 0 10px;
 }
@@ -27,12 +33,12 @@ div.searchBar{
     align-items: center;
     position: fixed;
     width: 100%;
-    background-color: #9E0142;
+    background-color: @nav-color;
     padding-top: 10px;
-    color: white;
+    color: @text-color;
     height: 150px;
     i {
-    	color: bisque;
+    	color: @text-color;
     }
     & > div{
     	flex-grow:2;
@@ -58,8 +64,8 @@ div.searchBar{
 	    height: 40px;
 	    background-color: transparent;
 	    border: none;
-	    color: bisque;
-	    border-bottom: 3px solid bisque;
+	    color: @text-color;
+	    border-bottom: 3px solid @text-color;
     }
     & >  div >input:focus{
     	outline: none;
@@ -73,14 +79,12 @@ div.searchBar{
 	width: 100%;
 	position: fixed;
 	bottom: 0;
-    background-color: #980218;
-    color: white !important;
+    background-color: @nav-color;
+    color: @text-color !important;
 	display: flex;
     justify-content: center;
-   // background-color: @nav-color;
-
     a{	
-    	color:white;
+    	color:@text-color;
         margin-left: 20px;
     	text-decoration: none;
     	font-size: 25px;
@@ -118,20 +122,21 @@ div.searchBar{
 	    }
     }
     & > div {
-       background-color:white;
+       background-color:@card-color;
        font-size: 14px;
 	   width: 95%;
 	   padding: 14px;
-	   border: 1px solid lightgray;
+	   border: 1px solid @border-color;
 	   margin-bottom: 20px;
 	   border-radius: 5px;
-	   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+	   box-shadow: @shadow;
 	   div a {
  		    text-decoration: none;
-    		color: @nav-color;	
+    		color: @active-color;	
     		font-size: 16px;
     		font-weight: 600;
    			padding-right: 10px;
+   			animation: fadein 0.6s;
 	   }
 	   div a + div {
 	   	word-break:break-all;
@@ -154,11 +159,12 @@ div.searchBar{
     }
      & > div > div{
 	   	display: flex;
-	    border-bottom: 1px solid lightgray;
+	    border-bottom: 1px solid @border-color;
 	    padding-bottom: 12px;
 	    padding-top: 10px;
 	    text-align: center;
 	    justify-content: space-between;
+
 	  } 
     @media screen and(min-width:745px){
     	top: 88px;
@@ -177,14 +183,17 @@ div.searchBar{
 
 	 div:first-child{
 	 	padding-right: 10px;
+	 	animation: grow 0.6s;
 	 	span{
-	      color: #9E0142;
+	 	  animation: grow 0.6s;	
+	      color: @active-color;
    		  font-weight: 600;
 	 	}
 	 }
 	 div:last-child{
+	 	animation: grow 0.6s;
 	 	padding-left: 10px;
-	 	border-left: 1px solid lightgray;
+	 	border-left: 1px solid @border-color;
 	 	color:green;
 	 }
      @media screen and(min-width:745px){
@@ -196,9 +205,9 @@ div.searchBar{
 }
 .loader {
 	display: block;
-    border: 16px solid #f3f3f3;
+    border: 16px solid @loader-color;
     border-radius: 50%;
-    border-top: 16px solid #9E0142;
+    border-top: 16px solid @nav-color;
     width: 120px;
     position: absolute;
     top: 45%;

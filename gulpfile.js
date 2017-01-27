@@ -1,6 +1,22 @@
 var gulp = require("gulp");
 var less = require("gulp-less");
 
+var minify = require('gulp-minifier');
+ 
+gulp.task('minifyT', function() {
+  gulp.src('./src').pipe(minify({
+    minify: true,
+    collapseWhitespace: true,
+    conservativeCollapse: true,
+    minifyJS: true,
+    minifyCSS: true,
+    getKeptComment: function (content, filePath) {
+        var m = content.match(/\/\*![\s\S]*?\*\//img);
+        return m && m.join('\n') + '\n' || '';
+    }
+  })).pipe(gulp.dest('./public/dest'));
+});
+
 // Task to compile all less files in the project
 gulp.task("less", function() {
     gulp.src("./public/less/*.less")
@@ -15,4 +31,4 @@ gulp.task("watch", function() {
 });
 
 // Compile everything once and then watch for changes.
-gulp.task("default", ["less", "watch"]);
+gulp.task("default", ["less", "watch","minifyT"]);

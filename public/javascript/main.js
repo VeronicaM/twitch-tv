@@ -3,7 +3,7 @@ $(function ()
      var usersData=[], 
      FILTER_ALL = "All", FILTER_LIVE="Live",FILTER_OFFLINE="Offline",
      filterType=FILTER_ALL,term="",
-     users = ["ESL_SC2", "freecodecamp","brunofin"];
+     users = ["brunofin","ESL_SC2", "freecodecamp"];
   
 	  
 	  $(document).ready(function(){

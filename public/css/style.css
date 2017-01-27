@@ -13,9 +13,9 @@ body {
   background-size: cover;
 }
 .active {
-  color: #A06095 !important;
+  color: #192466 !important;
   background-image: none;
-  background-color: #492031;
+  background-color: #FFC039;
   border-radius: 8px;
   padding: 0 10px 0 10px;
 }
@@ -27,13 +27,13 @@ div.searchBar {
   align-items: center;
   position: fixed;
   width: 100%;
-  background-color: #9E0142;
+  background-color: #2C3D6B;
   padding-top: 10px;
-  color: white;
+  color: #FFC039;
   height: 150px;
 }
 div.searchBar i {
-  color: bisque;
+  color: #FFC039;
 }
 div.searchBar > div {
   flex-grow: 2;
@@ -58,8 +58,8 @@ div.searchBar > div > input {
   height: 40px;
   background-color: transparent;
   border: none;
-  color: bisque;
-  border-bottom: 3px solid bisque;
+  color: #FFC039;
+  border-bottom: 3px solid #FFC039;
 }
 div.searchBar > div > input:focus {
   outline: none;
@@ -73,13 +73,13 @@ div.searchBar > div > input:focus {
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: #980218;
-  color: white !important;
+  background-color: #2C3D6B;
+  color: #FFC039 !important;
   display: flex;
   justify-content: center;
 }
 .filter a {
-  color: white;
+  color: #FFC039;
   text-decoration: none;
   font-size: 25px;
   line-height: 1.5 !important;
@@ -131,10 +131,11 @@ div.searchBar > div > input:focus {
 }
 #users > div div a {
   text-decoration: none;
-  color: #9E0142;
+  color: #192466;
   font-size: 16px;
   font-weight: 600;
   padding-right: 10px;
+  animation: fadein 0.6s;
 }
 #users > div div a + div {
   word-break: break-all;
@@ -183,12 +184,15 @@ div.footer {
 }
 div.footer div:first-child {
   padding-right: 10px;
+  animation: grow 0.6s;
 }
 div.footer div:first-child span {
-  color: #9E0142;
+  animation: grow 0.6s;
+  color: #192466;
   font-weight: 600;
 }
 div.footer div:last-child {
+  animation: grow 0.6s;
   padding-left: 10px;
   border-left: 1px solid lightgray;
   color: green;
@@ -204,7 +208,7 @@ div.footer div:last-child {
   display: block;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 16px solid #9E0142;
+  border-top: 16px solid #2C3D6B;
   width: 120px;
   position: absolute;
   top: 45%;
